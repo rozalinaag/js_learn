@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body style="margin: 0;">
+
+    <canvas id="canvas" style="display: block;" > Your browser don't support canvas!</canvas>
+
+    <script>
+        var canv = document.getElementById('canvas'), 
+        ctx = canv.getContext('2d');
+
+        //canvas for a full window
+        canv.width = 3000;
+        canv.height = 3000;
+
+        var x = 50;
+        ctx.fillStyle = 'magenta';
+        //ctx.fillRect(x, 50, 300, 200); //pink rectangle 
+
+        ctx.strokeStyle = 'red'; //red recnagle border
+        ctx.lineWidth  = 10; //width of border
+        ctx.strokeRect(x, 50, 300, 200); //rectangle without color inside
+
+        //animation with setInterval
+        /*
+        setInterval(function(){
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canv.width, canv.height);
+
+            ctx.fillStyle = 'magenta';
+            ctx.fillRect(x++, 50, 300, 200);
+
+        }, 10); */
+
+
+        //круг 
+
+        ctx.fillStyle = 'magenta';
+        ctx.arc(canv.width/2, canv.height/2, 100, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.scale(2, 2); //увеличение фигуры или растяжение
+        ctx.rotate(10 * Math.PI/180);
+
+        ctx.strokeStyle = 'black';
+        ctx.beginPath();
+        ctx.moveTo(150, 150);
+        ctx.lineTo(250, 600);
+        ctx.lineTo(350, 600);
+        ctx.closePath();
+        ctx.stroke();
+
+        //градиент
+        var grad = ctx.createLinearGradient(0, 0, 500, 0);
+        
+        //точки стопа градиента
+        grad.addColorStop('0', 'magenta');
+        grad.addColorStop('.50', 'blue');
+        grad.addColorStop('1', 'red');
+
+        //ctx.textAlign = 'center';
+        ctx.fillStyle = grad; //добавление градиента в цвет
+        ctx.font = '40px Georgia';
+        ctx.fillText("Hello world", 300, 300);
+
+    </script>
+    
+</body>
+</html>
