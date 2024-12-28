@@ -12,7 +12,7 @@ body {
   margin: 0 auto;
   max-height: 140px;
   overflow: hidden;
-  transition: max-height 0.7s;
+  transition: max-height 0.4s;
 }
 
 #show-more {
@@ -30,5 +30,4 @@ body {
 
 #content.open {
   max-height: 1000px;
-  transition: max-height 2s;
 }
