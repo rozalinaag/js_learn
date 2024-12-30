@@ -1,0 +1,39 @@
+html {
+  background: radial-gradient(grey, black);
+  color: white;
+  padding-top: 50px;
+  text-align: center;
+}
+
+#main {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#wrapper {
+  margin: 0 auto;
+  height: 12em;
+  width: 10em;
+}
+
+#circle {
+  background-color: #ff6347;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: 5px 5px rgba(51, 51, 51, 0.3);
+
+  &:hover {
+    background-color: #ea5a41;
+  }
+
+  &:active {
+    background-color: #bf4a36;
+  }
+}
+
+#note {
+  margin-top: 20px;
+}
