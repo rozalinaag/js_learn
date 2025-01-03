@@ -1,0 +1,60 @@
+.cool-form {
+  width: 50%;
+  background: rgb(67, 91, 117);
+  padding: 2em 1em 1em 2em;
+  border: 5px solid #53687e;
+  margin: auto;
+}
+
+.cool-form input[type='text'],
+.cool-form label {
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  color: #fff;
+}
+
+.cool-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Lets select all span elements where the parent element is a <label> element */
+.cool-form label > span {
+  width: 150px;
+  float: left;
+}
+
+.cool-form input[type='text'] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed rgb(152, 194, 235);
+  outline: none;
+  width: 300px;
+  font-style: italic;
+}
+
+.cool-form input[type='text']:focus {
+  border-bottom: 1px dashed rgb(217, 255, 169);
+}
+
+.cool-form input[type='submit'] {
+  font-family: calibri;
+  font-size: 1em;
+  margin-top: 1em;
+  background: #576e86;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px 8px 10px;
+  color: rgb(200, 209, 219);
+}
+
+.cool-form input[type='submit']:hover {
+  background: #394d61;
+}
+
+#output {
+  padding-top: 1em;
+  border-top: 1px solid rgba(81, 174, 228, 0.445);
+  width: 50%;
+  font-size: 1em;
+  color: #fff;
+}
