@@ -7,8 +7,19 @@
 </head>
 <body>
   <h1>Click Image</h1>
-  <img src="cat.jpg" alt="cat">
+  <img src="cat.jpg" alt="cat" width="300px" height="300px" id="image">
   <br>
+  <div id="content"></div>
   <br>
+  <script>
+    let image = document.getElementById('image')
+    let divContent = document.getElementById('content')
+
+    image.addEventListener('click', displayText)
+
+    function displayText() {
+      divContent.innerText = "I've been clicked"
+    }
+  </script>
 </body>
 </html>
