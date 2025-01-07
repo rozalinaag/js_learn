@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img id="bg" src="bg.jpg" alt="bg" width="300px" height="200px">
+  <div id="message"></div>
+
+  <script>
+    let background = document.getElementById('bg')
+
+    let onMouseMove = () => {
+      let message = document.getElementById('message');
+      message.textContent += `Hi `;
+    }
+
+    background.addEventListener('mousemove', onMouseMove);
+  </script>
+</body>
+</html>
