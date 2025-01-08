@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #mustache{
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+    <img src="personFace.jpg">
+    <img src="mustache.png" id="mustache" width="200px">
+
+    <script>
+      let mustache = document.getElementById('mustache')
+
+      document.addEventListener('click', moveMustache)
+
+      function moveMustache(e) {
+        console.log(e);
+        mustache.style.top =`${e.clientY - 54}px` 
+        mustache.style.left =`${e.clientX - 100}px` 
+      }
+    </script>
+</body>
+</html>
