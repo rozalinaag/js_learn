@@ -1,13 +1,21 @@
 let table = document.getElementById('delegation_table');
 
 table.addEventListener('click', onClickTable);
-let priviousItem;
+let selectedElement;
 
 function onClickTable(e) {
-  if (priviousItem) {
-    priviousItem.style.background = 'gray';
+  let item = e.target;
+  highlight(item);
+
+  item.classList.add('highlight');
+}
+
+function highlight(node) {
+  if (selectedElement != null) {
+    selectedElement.classList.remove('highlight');
   }
-  priviousItem = e.target;
-  e.target.style.background = 'red';
-  console.log(e.target);
+
+  //assign the new TD element we've clicked to the selectElement variable
+  selectedElement = node;
+  selectedElement.classList.add('highlight');
 }
