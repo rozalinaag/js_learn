@@ -20,5 +20,21 @@
                 <button class="remove">[x]</button>
             </div>
         </div>
+
+        <script>
+            let divDelegation = document.getElementById('delegation')
+            divDelegation.addEventListener('click', onRemove);
+
+            function onRemove(e) {
+                let target = e.target;
+
+                if (target.className !='remove'){
+                    return;
+                } else{
+                    //remove parent element - children will be removed
+                    target.parentElement.remove()
+                }
+            }
+        </script>
     </body>
 </html>
