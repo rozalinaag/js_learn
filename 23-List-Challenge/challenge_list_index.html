@@ -1,4 +1,17 @@
+
+
 <html>
+    <head>
+        <style>
+            .hide{
+                display: none;
+            }
+
+            li{
+                cursor: pointer;
+            }
+        </style>
+    </head>
     <body>
         <ul id="food">
             <li>Meats
@@ -38,5 +51,20 @@
                 </ul>
             </li>
         </ul>
+
+        <script>
+            let ul = document.getElementById('food')
+            ul.addEventListener('click', showOrHide)
+
+            function showOrHide(e){
+                let target = e.target;
+                if (target.tagName == 'LI'){
+                    let ulShowOrHide = target.querySelector('ul')
+                    if(ulShowOrHide){
+                        ulShowOrHide.classList.toggle('hide')
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
