@@ -50,3 +50,29 @@ h2 {
   margin: 0;
   display: inline-block;
 }
+
+#add-item {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#add-item input {
+  width: 300px;
+  display: block;
+  margin: 20px 0px 0px 0px;
+  padding: 0.5em;
+  border: 1px solid rgb(216, 216, 216);
+  font-size: 1em;
+  border-radius: 2px 0 0 2px;
+  float: left;
+}
+
+#add-item button {
+  width: 100px;
+  cursor: pointer;
+  color: white;
+  background: #32c77d;
+  padding: 0.5em 20px;
+  border: 1px solid #00ff6a;
+  font-size: 1em;
+}
