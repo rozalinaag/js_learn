@@ -5,6 +5,9 @@ formAdd.addEventListener('submit', (e) => {
 
   e.preventDefault();
   let text = formAdd.querySelector('input').value;
+  //clean field
+  formAdd.querySelector('input').value = null;
+
   let li = document.createElement('li');
 
   let groceryName = document.createElement('span');
