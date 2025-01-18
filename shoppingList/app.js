@@ -53,5 +53,20 @@ checkbox.addEventListener('change', (e) => {
 const SEARCH = document.forms['search-item'].querySelector('input');
 SEARCH.addEventListener('keyup', (e) => {
   let text = e.target.value.toLowerCase();
+
+  let groceryList = document.querySelector('#grocery-list ul');
+  let groceries = groceryList.getElementsByTagName('li');
+  let groceriesArray = Array.from(groceries);
+
+  groceriesArray.forEach((grocery) => {
+    let groceryName = grocery.firstElementChild.textContent;
+    let lowName = groceryName.toLowerCase();
+
+    if (lowName.indexOf(text) == -1) {
+      grocery.style.display = 'none';
+    } else {
+      grocery.style.display = 'block';
+    }
+  });
   console.log(text);
 });
