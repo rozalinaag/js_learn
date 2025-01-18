@@ -36,3 +36,15 @@ function remove(e) {
     li.remove();
   }
 }
+
+//hide items
+let checkbox = document.querySelector('#hide');
+checkbox.addEventListener('change', (e) => {
+  let groceryList = document.getElementById('grocery-list');
+
+  if (checkbox.checked) {
+    groceryList.style.display = 'none';
+  } else {
+    groceryList.style.display = 'block';
+  }
+});
