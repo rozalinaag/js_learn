@@ -73,3 +73,22 @@ SEARCH.addEventListener('keyup', (e) => {
   });
   console.log(text);
 });
+
+//tabs
+let headings = document.querySelector('.heading');
+let panels = document.querySelectorAll('.panel');
+let selectedPanel = null;
+
+headings.addEventListener('click', (e) => {
+  let target = e.target;
+  let dataAttribute = e.target.dataset.clicked;
+
+  if (target.tagName == 'LI') {
+    if (selectedPanel != null) {
+      selectedPanel.classList.toggle('selected');
+    }
+
+    selectedPanel = target;
+    selectedPanel.classList.toggle('selected');
+  }
+});
