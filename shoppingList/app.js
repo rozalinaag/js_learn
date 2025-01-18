@@ -8,9 +8,7 @@ formAdd.addEventListener('submit', (e) => {
   let li = document.createElement('li');
 
   let groceryName = document.createElement('span');
-  groceryName.innerHTML = text;
   let deleteButton = document.createElement('span');
-  deleteButton.innerHTML = 'delete';
 
   //inside li - 2 span
   li.appendChild(groceryName);
@@ -18,6 +16,14 @@ formAdd.addEventListener('submit', (e) => {
 
   //attach li to ul
   ul.appendChild(li);
+
+  //add text
+  groceryName.textContent = text;
+  deleteButton.textContent = 'delete';
+
+  //add classes
+  groceryName.classList.add('name');
+  deleteButton.classList.add('delete');
 });
 
 //remove
