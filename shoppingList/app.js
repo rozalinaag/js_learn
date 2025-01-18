@@ -48,3 +48,10 @@ checkbox.addEventListener('change', (e) => {
     groceryList.style.display = 'block';
   }
 });
+
+//search for items
+const SEARCH = document.forms['search-item'].querySelector('input');
+SEARCH.addEventListener('keyup', (e) => {
+  let text = e.target.value.toLowerCase();
+  console.log(text);
+});
