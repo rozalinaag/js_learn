@@ -1,8 +1,11 @@
-let buttons = document.querySelectorAll('#grocery-list li .delete');
+let groceryListUl = document.querySelector('#grocery-list ul');
 
-buttons.forEach((button) => {
-  button.addEventListener('click', (e) => {
-    const LI = e.target.parentElement;
-    LI.parentElement.removeChild(LI);
-  });
-});
+groceryListUl.addEventListener('click', remove);
+
+function remove(e) {
+  let target = e.target;
+  if (target.className == 'delete') {
+    let li = target.parentElement;
+    li.remove();
+  }
+}
