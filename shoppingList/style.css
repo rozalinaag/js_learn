@@ -129,6 +129,7 @@ h2 {
   border: 1px solid #ddd;
   padding: 0 1em;
   border-radius: 3px;
+  display: none;
 }
 
 #tab-wrapper .panel.active {
@@ -137,4 +138,9 @@ h2 {
 
 #tab-wrapper .selected {
   background-color: rgb(139, 139, 139);
+}
+
+.show {
+  background: rgb(183, 183, 98);
+  padding: 10px;
 }

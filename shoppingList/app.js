@@ -90,5 +90,23 @@ headings.addEventListener('click', (e) => {
 
     selectedPanel = target;
     selectedPanel.classList.toggle('selected');
+
+    let targetPanel = document.querySelector(dataAttribute);
+    panels.forEach((panel) => {
+      if (panel == targetPanel) {
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+      }
+    });
   }
 });
+
+let answerButton = document.getElementById('showAnswer');
+answerButton.addEventListener('click', answer);
+
+function answer() {
+  document.getElementById('answer').classList.add('show');
+  document.getElementById('answer').textContent = 'AN IMPASTA';
+  answerButton.style.display = 'none';
+}
