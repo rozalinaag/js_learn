@@ -8,9 +8,7 @@ formAdd.addEventListener('submit', (e) => {
   let li = document.createElement('li');
 
   let groceryName = document.createElement('span');
-  groceryName.innerHTML = text;
   let deleteButton = document.createElement('span');
-  deleteButton.innerHTML = 'delete';
 
   //inside li - 2 span
   li.appendChild(groceryName);
@@ -18,6 +16,14 @@ formAdd.addEventListener('submit', (e) => {
 
   //attach li to ul
   ul.appendChild(li);
+
+  //add text
+  groceryName.textContent = text;
+  deleteButton.textContent = 'delete';
+
+  //add classes
+  groceryName.classList.add('name');
+  deleteButton.classList.add('delete');
 });
 
 //remove
@@ -30,3 +36,37 @@ function remove(e) {
     li.remove();
   }
 }
+
+//hide items
+let checkbox = document.querySelector('#hide');
+checkbox.addEventListener('change', (e) => {
+  let groceryList = document.getElementById('grocery-list');
+
+  if (checkbox.checked) {
+    groceryList.style.display = 'none';
+  } else {
+    groceryList.style.display = 'block';
+  }
+});
+
+//search for items
+const SEARCH = document.forms['search-item'].querySelector('input');
+SEARCH.addEventListener('keyup', (e) => {
+  let text = e.target.value.toLowerCase();
+
+  let groceryList = document.querySelector('#grocery-list ul');
+  let groceries = groceryList.getElementsByTagName('li');
+  let groceriesArray = Array.from(groceries);
+
+  groceriesArray.forEach((grocery) => {
+    let groceryName = grocery.firstElementChild.textContent;
+    let lowName = groceryName.toLowerCase();
+
+    if (lowName.indexOf(text) == -1) {
+      grocery.style.display = 'none';
+    } else {
+      grocery.style.display = 'block';
+    }
+  });
+  console.log(text);
+});
